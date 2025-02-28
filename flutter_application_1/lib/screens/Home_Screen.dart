@@ -238,6 +238,7 @@ class HomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              onTap: () {},
             ),
             SizedBox(
               height: 15,
@@ -270,6 +271,7 @@ class HomeScreen extends StatelessWidget {
                         fontFamily: AppAssets.font),
                     textAlign: TextAlign.center,
                   )),
+              onTap: () {},
             ),
             SizedBox(
               height: 15,
@@ -302,6 +304,7 @@ class HomeScreen extends StatelessWidget {
                         fontFamily: AppAssets.font),
                     textAlign: TextAlign.center),
               ),
+              onTap: () {},
             ),
           ],
         ),

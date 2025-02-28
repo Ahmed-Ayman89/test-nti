@@ -8,33 +8,44 @@ class OptionTile extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.trailing,
-    this.onTap,
+    required this.onTap,
   });
-  final VoidCallback? onTap;
+
   final Widget icon;
   final String title;
   final Widget trailing;
+  final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: SizedBox(
+      child: Container(
         width: 331,
-        height: 70,
-        child: Card(
+        height: 63,
+        decoration: BoxDecoration(
           color: Colors.white,
-          child: ListTile(
-            leading: icon,
-            title: Text(
-              title,
-              style: TextStyle(
-                  fontFamily: AppAssets.font,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w300),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 4,
+              spreadRadius: 1,
+              offset: Offset(0, 2),
             ),
-            trailing: trailing,
-            onTap: () {},
+          ],
+        ),
+        child: ListTile(
+          leading: icon,
+          title: Text(
+            title,
+            style: TextStyle(
+              fontFamily: AppAssets.font,
+              fontSize: 14,
+              fontWeight: FontWeight.w300,
+            ),
           ),
+          trailing: trailing,
         ),
       ),
     );

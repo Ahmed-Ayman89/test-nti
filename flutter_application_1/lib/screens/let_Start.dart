@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/profile_Screen.dart';
-
 import '../Summary/Custom_Button.dart';
 import '../componant/App_Assets.dart';
-import 'empty_page.dart';
 
 class LetStart extends StatelessWidget {
   const LetStart({super.key});

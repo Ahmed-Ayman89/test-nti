@@ -43,18 +43,24 @@ class _EditPageState extends State<EditPage> {
               children: [
                 Text("Notification",
                     style: TextStyle(
-                        color: Colors.black,
                         fontFamily: AppAssets.font,
                         fontSize: 20,
                         fontWeight: FontWeight.w300)),
-                Switch(
-                  value: isNotificationEnabled,
-                  onChanged: (value) {
-                    setState(() {
-                      isNotificationEnabled = value;
-                    });
-                  },
-                  activeColor: Colors.green,
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Transform.scale(
+                    scaleX: 1.7,
+                    scaleY: 1.3,
+                    child: Switch(
+                      value: isNotificationEnabled,
+                      onChanged: (value) {
+                        setState(() {
+                          isNotificationEnabled = value;
+                        });
+                      },
+                      activeColor: Colors.green,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -64,7 +70,6 @@ class _EditPageState extends State<EditPage> {
               children: [
                 Text("Enable Cloud",
                     style: TextStyle(
-                        color: Colors.black,
                         fontFamily: AppAssets.font,
                         fontSize: 20,
                         fontWeight: FontWeight.w300)),
@@ -75,8 +80,8 @@ class _EditPageState extends State<EditPage> {
                     });
                   },
                   child: Container(
-                    width: 30,
-                    height: 30,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
                       color: isCloudEnabled ? Colors.green : Colors.transparent,
                       borderRadius: BorderRadius.circular(5),

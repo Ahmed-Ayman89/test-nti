@@ -46,28 +46,34 @@ class _SittingScreenState extends State<SittingScreen> {
               height: 30,
             ),
             OptionTile(
-                icon: SvgPicture.asset(AppAssets.profile),
-                title: 'Update Profile',
-                trailing: SvgPicture.asset(AppAssets.forwardArrow),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()),
-                  );
-                }),
+              icon: SvgPicture.asset(AppAssets.profile),
+              title: 'Update Profile',
+              trailing: SvgPicture.asset(AppAssets.forwardArrow),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(),
+                  ),
+                );
+              },
+            ),
             SizedBox(
               height: 30,
             ),
             OptionTile(
-                icon: SvgPicture.asset(AppAssets.sitting),
-                title: 'Settings',
-                trailing: SvgPicture.asset(AppAssets.forwardArrow),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => EditPage()),
-                  );
-                })
+              icon: SvgPicture.asset(AppAssets.sitting),
+              title: 'Settings',
+              trailing: SvgPicture.asset(AppAssets.forwardArrow),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditPage(),
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),
