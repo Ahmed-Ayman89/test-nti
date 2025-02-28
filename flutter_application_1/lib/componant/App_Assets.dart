@@ -6,4 +6,8 @@ abstract class AppAssets {
   static const String calender = 'assets/Icon/calendar.svg';
   static const String add = 'assets/Icon/Add.svg';
   static const String work = 'assets/Icon/Vector (1).svg';
+  static const String downArrow = 'assets/Icon/down.svg';
+  static const String forwardArrow = 'assets/Icon/arrowForord.svg';
+  static const String profile = 'assets/Icon/Profile.svg';
+  static const String sitting = 'assets/Icon/Setting.svg';
 }

@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Summary/Task_Screen.dart';
 import '../Summary/option_Tail.dart';
-import 'Add_Task.dart';
+import 'empty_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             child: GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AddTask()),
+                MaterialPageRoute(builder: (context) => EmptyPage()),
               ),
               child: SvgPicture.asset(AppAssets.add),
             ),
@@ -139,10 +139,17 @@ class HomeScreen extends StatelessWidget {
                   TaskContainer(
                     title: 'Work Task',
                     subtitle: 'Add New Features',
-                    icon: SvgPicture.asset(
-                      'assets/Icon/work.svg',
-                      width: 12,
-                      height: 12,
+                    icon: Container(
+                      padding: EdgeInsets.all(7),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: AppColor.backgroundButton,
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/Icon/Vector (1).svg',
+                        width: 12,
+                        height: 12,
+                      ),
                     ),
                     textColor: AppColor.colorText,
                     colorContainer: AppColor.colorText2,
@@ -153,7 +160,13 @@ class HomeScreen extends StatelessWidget {
                   TaskContainer(
                     title: 'Personal Task',
                     subtitle: 'Improve my English skills\n by trying to speek',
-                    icon: SvgPicture.asset(AppAssets.home),
+                    icon: SizedBox(
+                      width: 22,
+                      height: 22,
+                      child: SvgPicture.asset(
+                        AppAssets.person,
+                      ),
+                    ),
                     textColor: AppColor.colorText2,
                     colorContainer: Color(0xFFCEEBDC),
                   ),
@@ -163,7 +176,13 @@ class HomeScreen extends StatelessWidget {
                   TaskContainer(
                     title: 'Work Task',
                     subtitle: 'Add new feature for Do It\n app and commit it',
-                    icon: SvgPicture.asset(AppAssets.person),
+                    icon: Container(
+                        padding: EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Color(0XFFFFE4F2),
+                        ),
+                        child: SvgPicture.asset(AppAssets.home)),
                     textColor: AppColor.colorText2,
                     colorContainer: Color(0xFFFFE4F2),
                   ),
@@ -176,18 +195,81 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  'Task Groups',
+                  style: TextStyle(fontFamily: AppAssets.font, fontSize: 14),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
             OptionTile(
               title: 'Personal Task',
-              icon: SvgPicture.asset(AppAssets.person),
-              trailing: Text('5'),
+              icon: Container(
+                width: 35,
+                height: 35,
+                padding: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: AppColor.backgroundButton,
+                ),
+                child: SvgPicture.asset(AppAssets.person),
+              ),
+              trailing: Container(
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  color: Color(0xFFCEEBDC),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                width: 22,
+                height: 23,
+                child: Text(
+                  '5',
+                  style: TextStyle(
+                      color: AppColor.backgroundButton,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: AppAssets.font),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
             SizedBox(
               height: 15,
             ),
             OptionTile(
               title: 'Home Task',
-              icon: SvgPicture.asset(AppAssets.home),
-              trailing: Text('3'),
+              icon: Container(
+                  width: 35,
+                  height: 35,
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color(0XFFFFE4F2),
+                  ),
+                  child: SvgPicture.asset(AppAssets.home)),
+              trailing: Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: Color(0XFFFFE4F2),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  width: 22,
+                  height: 23,
+                  child: Text(
+                    '3',
+                    style: TextStyle(
+                        color: Color(0XFFFF0084),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: AppAssets.font),
+                    textAlign: TextAlign.center,
+                  )),
             ),
             SizedBox(
               height: 15,
@@ -195,12 +277,31 @@ class HomeScreen extends StatelessWidget {
             OptionTile(
               title: 'Work Task',
               icon: Container(
-                width: 19,
-                height: 21,
-                decoration: BoxDecoration(color: AppColor.colorText2),
+                width: 35,
+                height: 35,
+                padding: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  color: AppColor.colorText2,
+                  borderRadius: BorderRadius.circular(5),
+                ),
                 child: SvgPicture.asset(AppAssets.work),
               ),
-              trailing: Text('1'),
+              trailing: Container(
+                width: 22,
+                height: 23,
+                padding: EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: AppColor.colorText2,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Text('1',
+                    style: TextStyle(
+                        color: AppColor.colorText,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: AppAssets.font),
+                    textAlign: TextAlign.center),
+              ),
             ),
           ],
         ),

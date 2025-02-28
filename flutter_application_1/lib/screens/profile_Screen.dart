@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Home_Screen.dart';
+
+import 'package:flutter_application_1/screens/empty_page.dart';
 
 import '../Summary/Custom_Button.dart';
 import '../Summary/defult_TextFrom.dart';
@@ -39,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomeScreen(),
+                  builder: (context) => EmptyPage(),
                 ),
               );
             },
