@@ -18,11 +18,16 @@ class _EditPageState extends State<EditPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: SvgPicture.asset(
-          AppAssets.arrowBack,
-          width: 21,
-          height: 21,
-          fit: BoxFit.scaleDown,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: SvgPicture.asset(
+            AppAssets.arrowBack,
+            width: 21,
+            height: 21,
+            fit: BoxFit.scaleDown,
+          ),
         ),
         title: Text("Settings",
             style: TextStyle(
